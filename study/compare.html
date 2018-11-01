@@ -3,14 +3,18 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Title</title>
+	<link rel="shortcut icon" href="../img/github%201.ico">
+
 </head>
-<body>
+<body style="margin-left: 200px">
 	<div>{} == {} 结果为什么是false？</div>
 	<ul>
-		<li><a><img href="img/exam.png" alt="示例图片"></a></li>
+		<li><a><img src="../img/exam.png" alt=""></a></li>
 
 		<li>
 			如你所见，上述三个例子结果都为false。
+			<br>
+			<br>
 
 			相信很多人都碰到过上述情况，像我这种基本功不太扎实的小白，估计都会看的一脸懵吧。别着急，本博客就是来解决问题的。
 			首先，先来了解两个概念：栈 stack 和 堆 heap。
@@ -20,120 +24,89 @@
 			<p>栈(stack)：先进后出；自动分配内存空间，由系统自动释放；使用的是一级缓存，他们通常都是被调用时处于存储空间中，调用完立即释放。</p>
 			
 			<br>
-			<p>堆(heap)：队列优先，先进先出；动态分配内存，大小不定也不会自动释放；存放在二级缓存中，生命周期由虚拟机的垃圾回收算法来决定；一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。
+			<p>堆(heap)：队列优先，先进先出；动态分配内存，大小不定也不会自动释放；存放在二级缓存中，生命周期由虚拟机的垃圾回收算法来决定；一般由程序员
+				<br><br>分配释放，若程序员不释放，程序结束时可能由OS回收。
 
-</p>
+			</p>
+			<hr>
 		</li>
 	</ul>
 	<div>
-	js中基本数据类型和引用数据类型
+	<h3>js中基本数据类型和引用数据类型</h3>
+		<br><br>
 
-基本类型：存放在栈内存中的简单数据段，数据大小确定，内存空间大小可以分配。
+基本类型：存放在栈内存中的简单数据段，数据大小确定，内存空间大小可以分配。<br><br>
 
- Undefined / Null / Boolean / Number / String，它们是直接按值存放的，可以直接访问。
+ Undefined / Null / Boolean / Number / String，它们是直接按值存放的，可以直接访问。<br><br>
 
-引用类型：存放在堆内存中的对象；每个空间大小不一样，根据情况进行特定的分配。
+引用类型：存放在堆内存中的对象；每个空间大小不一样，根据情况进行特定的分配。<br><br>
 
-当我们需要访问引用数据类型 (对象 / 数组 / 函数) 的值时，首先从栈中获得该对象的地址指针，然后再从堆内存中取得所需的数据。
-
-
-
-所以，现在就可以解释 var a = function(){}; var b = function(){}; a==b 为false了。
-
-变量a实际保存的是指向堆内存中对象的一个指针，而b保存的是指向堆内存中另一个对象的一个指针；虽然这两个对象的值是一样的，但它们是独立的2个对象，占了2份内存空间；所以 a==b 为 false。
-
-如果 var a = {}; var b = a; 这时变量b复制了变量a保存的指针，它们都指向堆内存中同一个对象；所以 a==b 为 true。
+当我们需要访问引用数据类型 (对象 / 数组 / 函数) 的值时，首先从栈中获得该对象的地址指针，然后再从堆内存中取得所需的数据。<br><br><br><br>
 
 
 
-传值与传址
+所以，现在就可以解释 var a = function(){}; var b = function(){}; a==b 为false了。<br><br><br>
 
-基本类型与引用类型最大的区别实际就是 传值与传址的区别。
+变量a实际保存的是指向堆内存中对象的一个指针，而b保存的是指向堆内存中另一个对象的一个指针；虽然这两个对象的值是一样的，但它们是独立的2个对象，占了2份内存空间；所以 a==b 为 false。<br><br><br>
 
-
-var a = [1,2,3,4,5];
-var b = a;
-var c = a[0];
-console.log(b);  // [1,2,3,4,5]
-console.log(c);  // 1
- 
-b[4] = 6;
-c = 7;
-console.log(a[4]);  //6
-console.log(a[0]);  //1
-
-从上面代码可以得知，当改变b中的数据时，a也发生了变化；但是当我们改变c的数值时，a却没有发生改变。
-这就是传值与传址的区别。因为a是数组，属于引用类型，所以a给b传的是栈中的地址，而不是堆内存中的对象。而c仅仅是从a堆内存中获取的一个数值，并保存在栈中。所以b修改的时候，会根据地址回到a堆内存中修改；c则直接在栈中修改，并且不能指向a堆内存中。
+如果 var a = {}; var b = a; 这时变量b复制了变量a保存的指针，它们都指向堆内存中同一个对象；所以 a==b 为 true。<br><br><br>
+		<hr>
 
 
 
-讲到栈和堆，不得不提浅拷贝和深拷贝。
+<h3>传值与传址</h3>
 
-浅拷贝
-
-当我们使用对象拷贝时，如果属性是对象或数组时，这时我们传递的只是一个地址。因此子对象在访问该属性时，会根据地址回溯到父对象指向的堆内存中，即父子对象发生了关联，两者的属性值会指向同一内存空间。
+基本类型与引用类型最大的区别实际就是 传值与传址的区别。<br><br><br>
 
 
-var a = {name: 'zyj'};
- 
-    function Copy(q) {
-        var m = {};
-        for(var i in q) {
-            m[i] = q[i];
-        }
-        return m;
-    }
- 
-    a.hobby = ['reading', 'coffee'];
-    var b = Copy(a);
-    b.age = 18;
-    console.log(b.name);  //zyj
-    console.log(b.hobby);  //['reading', 'coffee']
-    console.log(b.age);  //18
-    console.log(a.age);  //undefined
+<div>
+	<img src="../img/exam1.png" alt="">
+</div>
 
-a对象中的name属性值为字符串，hobby为数组。a拷贝到b，两个属性均能顺利拷贝。 给b对象新增一个number类型的属性age时，b能够正常修改，而a中无定义。说明 子对象 b 的 age 并没有关联到 父对象 a 中，所以为undefined。
-
-b.hobby.push('dancing');
-console.log(b.hobby); //['reading', 'coffee', 'dancing']
-console.log(a.hobby); //['reading', 'coffee', 'dancing']
-
-但是，若修改的属性为对象或数组时，那么父子对象之间就会发生关联。其在内存的状态，见下图。
-
-
-原因是 age的值属于基本类型，所以拷贝的时候传递的是该数据值；但hobby的值是堆内存中的对象，所以hobby在拷贝的时候传递的是指向hobby对象的地址，无论复制多少hobby，其值始终是指向父对象的hobby对象的内存空间。
+从上面代码可以得知，当改变b中的数据时，a也发生了变化；但是当我们改变c的数值时，a却没有发生改变。<br><br><br>
+这就是传值与传址的区别。因为a是数组，属于引用类型，所以a给b传的是栈中的地址，而不是堆内存中的对象。而c仅仅是从a堆内存中获取的一个数值，<br><br><br>并保存在栈中。所以b修改的时候，会根据地址回到a堆内存中修改；c则直接在栈中修改，并且不能指向a堆内存中。<br><br><br>
 
 
 
-深拷贝
+讲到栈和堆，不得不提浅拷贝和深拷贝。<br><br>
+		<hr>
 
-在实际编码中，我们不希望父子对象之间产生关联，这时就用到深拷贝。既然属性值类型是数组或对象时只会传址，那么就可以用递归来解决这个问题，把父对象中所有属于对象的属性类型遍历赋给子对象即可。代码如下：
+<h3>浅拷贝</h3>
+
+当我们使用对象拷贝时，如果属性是对象或数组时，这时我们传递的只是一个地址。因此子对象在访问该属性时，会根据地址回溯到父对象指向的堆内存中，即父子对象发生了关联，两者的属性值会指向同一内存空间。<br><br>
 
 
-var a = {name: 'zyj'};
-    function Copy(q, m) {
-        var m = m || {};
-        for(var i in q) {
-            if(typeof q[i] === 'object') {
-                m[i] = (q[i].constructor === Array)?[]:{};
-                Copy(q[i], m[i]);
-            }else {
-                m[i] = q[i];
-            }
-        }
-        return m;
-    }
- 
-    a.hobby = ['reading', 'coffee'];
-    var b = {};
-    b = Copy(a, b);
-    b.hobby.push('dancing');
-    console.log(b.hobby); //['reading', 'coffee', 'dancing']
-    console.log(a.hobby); //['reading', 'coffee']
+<div>
+	<img src="../img/exam2.png" alt="">
+</div>
 
-修改b子对象的hobby数组时，没有使a父对象中的hobby数组新增一个值，即子对象没有影响到父对象a中的hobby，存储模式如下：
+a对象中的name属性值为字符串，hobby为数组。a拷贝到b，两个属性均能顺利拷贝。 给b对象新增一个number类型的属性age时，b能够正常修改，而a中无定义。说明 子对象 b 的 age 并没有关联到 父对象 a 中，所以为undefined。<br><br><br><br>
+
+<div><img src="../img/exam3.png" alt=""></div>
+
+但是，若修改的属性为对象或数组时，那么父子对象之间就会发生关联。其在内存的状态，见下图。<br><br><br><br>
 		
-		<div><img src="img/kaobei.png"></div>
+		<div><img src="../img/baoma.png" alt=""></div>
+		<br><br><br>
+
+
+原因是 age的值属于基本类型，所以拷贝的时候传递的是该数据值；但hobby的值是堆内存中的对象，所以hobby在拷贝的时候传递的是指向hobby对象的地址，无论复制多少hobby，其值始终是指向父对象的hobby对象的内存空间。<br><br><br><br>
+
+		<hr>
+
+<h3>深拷贝</h3>
+
+在实际编码中，我们不希望父子对象之间产生关联，这时就用到深拷贝。既然属性值类型是数组或对象时只会传址，那么就可以用递归来解决这个问题，把父对象中所有属于对象的属性类型遍历赋给子对象即可。代码如下：<br><br>
+
+<div><img src="../img/exam4.png" alt=""></div>
+
+
+<div>修改b子对象的hobby数组时，没有使a父对象中的hobby数组新增一个值，即子对象没有影响到父对象a中的hobby，存储模式如下：
+	<div><img src="../img/kaobei.png"></div>
+	
+</div>
+		
+		
 
 --------------------- 
 	</div>
