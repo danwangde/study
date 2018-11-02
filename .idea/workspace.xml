@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef514b4b-27c3-4a21-8153-3eda986d1617" name="默认" comment="">
-      <change afterPath="$PROJECT_DIR$/study/css3开关.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/study/迭代方法.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/study/归并方法.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,18 +16,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="compare.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/study/compare.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-              <folding>
-                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="toString.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/study/toString.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -93,11 +79,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="css3开关.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="css3开关.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/study/css3开关.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1843">
               <caret line="163" selection-start-line="163" selection-end-line="163" selection-end-column="113" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="归并方法.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/study/归并方法.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -147,6 +142,7 @@
         <option value="$PROJECT_DIR$/study/function.html" />
         <option value="$PROJECT_DIR$/study/迭代方法.js" />
         <option value="$PROJECT_DIR$/study/css3开关.html" />
+        <option value="$PROJECT_DIR$/study/归并方法.html" />
       </list>
     </option>
   </component>
@@ -233,12 +229,12 @@
       <updated>1541059963628</updated>
       <workItem from="1541059965221" duration="1004000" />
       <workItem from="1541061010317" duration="10042000" />
-      <workItem from="1541141218785" duration="5071000" />
+      <workItem from="1541141218785" duration="5202000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13934000" />
+    <option name="totallyTimeSpent" value="14065000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -428,6 +424,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1843">
           <caret line="163" selection-start-line="163" selection-end-line="163" selection-end-column="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/study/归并方法.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
         </state>
       </provider>
     </entry>
