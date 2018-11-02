@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>toString和toLocaleString</title>
+	<style>
+		li{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+<div>
+	偶然之间用到这两个方法
+	<br><br>
+	然后在数字转换成字符串的时候，并没有感觉这两个方法有什么区别，如下例子：
+	<br><br>
+	<script>
+        var e=123
+        e.toString(); //"123"
+		e.toLocaleString()//"123"
+	</script>
+	<p style="color: red">是吧，并没有什么区别，上面的e是一个三位数的数字，那么要是四位数以上呢</p>
+	<br><br>
+	<script>
+        var a=1234;
+        e.toString(); //"1234"
+        e.toLocaleString()//"1,234"
+	</script>
+
+	<p style="color: red">当数字是四位及以上时，toLocaleString()会让数字三位三位一分隔，像我们有时候数字
+		也会三位一个分号
+	</p>
+
+	<br><br>
+	再继续看数组转换成字符串分别用这两种方法有什么区别呢，看看，代码如下：<br><br>
+
+	<script>
+		var aa=[1,2,3];
+		aa.toLocaleString();//"1,2,3"
+
+		aa.toString();//"1,2,3"
+
+	</script>
+	也并没有区别啊 然后在网上看到好像在<span style="color:red;">转换时间格式上有区别</span>，
+	那么看看吧，代码如下：<br><br><br>
+
+	<script>
+        var sd=new Date()
+		/*sd
+        Wed Feb 15 2017 11:21:31 GMT+0800 (CST)*/
+
+		sd.toLocaleString()
+        //"2017/2/15 上午11:21:31"
+
+		sd.toString()
+        //"Wed Feb 15 2017 11:21:31 GMT+0800 (CST)"
+	</script>
+
+	这样总结以上就是toString()和toLocaleString()两点的区别：<br><br>
+	<ol>
+		<li>当数字是四位数以上的时候，有区别，区别代码如上面所示；</li>
+		<li>当目标的是标准时间格式时，用以上两种方法是有区别的，区别看以上代码。</li>
+	</ol>
+</div>
+</body>
+</html>
