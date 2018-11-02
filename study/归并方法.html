@@ -5,6 +5,19 @@
 	<title>Title</title>
 </head>
 <body>
+<div id="div1">单击按钮以显示日期</div>
+<button onclick="myDate()">按钮</button>
+<script>
+	function myDate() {
+        var d=new Date();
 
+
+        var div=document.querySelector('#div1');
+
+        div.innerHTML=	d.toLocaleDateString();
+    }
+
+
+</script>
 </body>
 </html>
