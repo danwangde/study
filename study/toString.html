@@ -9,12 +9,17 @@
 		}
 	</style>
 	<link rel="shortcut icon" href="../img/github%201.ico">
-<body>
+<body style="margin-left: 300px;">
 <div>
-	偶然之间用到这两个方法
+	1.偶然之间用到这两个方法
 	<br><br>
 	然后在数字转换成字符串的时候，并没有感觉这两个方法有什么区别，如下例子：
 	<br><br>
+	<p style="border: 1px solid pink; ">
+        var e=123<br><br>
+        e.toString(); //"123"<br><br>
+        e.toLocaleString()//"123"<br><br>
+	</p>
 	<script>
         var e=123
         e.toString(); //"123"
@@ -22,6 +27,11 @@
 	</script>
 	<p style="color: red">是吧，并没有什么区别，上面的e是一个三位数的数字，那么要是四位数以上呢</p>
 	<br><br>
+	<p style="border: 1px solid pink; ">
+        var a=1234;<br><br>
+        e.toString(); //"1234"<br><br>
+        e.toLocaleString()//"1,234"<br><br>
+	</p><br><br>
 	<script>
         var a=1234;
         e.toString(); //"1234"
@@ -34,7 +44,13 @@
 
 	<br><br>
 	再继续看数组转换成字符串分别用这两种方法有什么区别呢，看看，代码如下：<br><br>
+	<p style="border: 1px solid pink; ">
+        var aa=[1,2,3];<br><br>
+        aa.toLocaleString();//"1,2,3"<br><br>
 
+        aa.toString();//"1,2,3"<br><br>
+
+	</p>
 	<script>
 		var aa=[1,2,3];
 		aa.toLocaleString();//"1,2,3"
@@ -44,6 +60,17 @@
 	</script>
 	也并没有区别啊 然后在网上看到好像在<span style="color:red;">转换时间格式上有区别</span>，
 	那么看看吧，代码如下：<br><br><br>
+	<p style="border: 1px solid pink; ">
+        var sd=new Date()<br><br>
+        /*sd
+		Wed Feb 15 2017 11:21:31 GMT+0800 (CST)*/<br><br>
+
+        sd.toLocaleString()<br><br>
+        //"2017/2/15 上午11:21:31"<br><br>
+
+        sd.toString()<br><br>
+        //"Wed Feb 15 2017 11:21:31 GMT+0800 (CST)"<br><br>
+	</p>
 
 	<script>
         var sd=new Date()
